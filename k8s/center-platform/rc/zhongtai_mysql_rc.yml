@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: zhongtai-mysql
+spec:
+  replicas: 1
+  selector:
+    app: zhongtai-mysql
+  template:
+    metadata:
+      labels:
+        app: zhongtai-mysql
+    spec:
+      containers:
+      - image: mysql:5
+        name: zhongtai-mysql
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - name: zhongtai-mysql-volume
+          mountPath: /var/lib/mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: 'zhongtai123'
+      volumes: 
+      - name: zhongtai-mysql-volume
+        hostPath:
+          path: /data/mysql
