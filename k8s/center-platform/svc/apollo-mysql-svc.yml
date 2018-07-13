@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apollo-mysql-svc
+spec:
+  ports:
+  - name: apollo-mysql-svc
+    port: 3306
+    targetPort: 3306
+    protocol: TCP
+  selector:
+    app: apollo-mysql

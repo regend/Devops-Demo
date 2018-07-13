@@ -1,29 +1,29 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: zhongtai-mysql
+  name: apollo-mysql
 spec:
   replicas: 1
   selector:
-    app: zhongtai-mysql
+    app: apollo-mysql
   template:
     metadata:
       labels:
-        app: zhongtai-mysql
+        app: apollo-mysql
     spec:
       containers:
-      - image: mysql:5
-        name: zhongtai-mysql
+      - image: 10.10.89.23:5000/apollo/mysql
+        name: apollo-mysql
         ports:
         - containerPort: 3306
         volumeMounts:
-        - name: zhongtai-mysql-volume
+        - name: apollo-mysql-volume
           mountPath: /var/lib/mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: 'zhongtai123'
       volumes: 
-      - name: zhongtai-mysql-volume
+      - name: apollo-mysql-volume
         hostPath:
           path: /data/mysql
       nodeSelector:
