@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
   - name: apollo-mysql-svc
-    nodePort: 30007
+    nodePort: 30006
     port: 3306
     targetPort: 3306
     protocol: TCP
