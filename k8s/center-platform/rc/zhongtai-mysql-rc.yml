@@ -27,4 +27,4 @@ spec:
         hostPath:
           path: /data/mysql
       nodeSelector:
-        mysql:apollo
+        mysql: apollo
