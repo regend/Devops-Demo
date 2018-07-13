@@ -12,7 +12,7 @@ spec:
         app: eureka
     spec:
       containers:
-      - image: springcloud/eureka
+      - image: 192.168.2.117:5000/springcloud/eureka
         name: eureka
         ports:
         - containerPort: 8761
