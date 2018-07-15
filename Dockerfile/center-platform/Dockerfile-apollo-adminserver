@@ -2,7 +2,7 @@ FROM java:8
 
 MAINTAINER Regend
 
-ADD *.zip /home/
+ADD *.tar /home/
 
 ENV TZ=Asia/Shanghai
 
