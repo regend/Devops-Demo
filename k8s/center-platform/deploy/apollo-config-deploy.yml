@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apollo-config
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    app: apollo-config
+  template:
+    metadata:
+      labels:
+        app: apollo-config
+    spec:
+      containers:
+      - image: 192.168.2.117:5000/center-platform/apollo/configservice
+        name: apollo-config
+        ports:
+        - containerPort: 8080

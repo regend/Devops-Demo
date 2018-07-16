@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apollo-portal
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    app: apollo-portal
+  template:
+    metadata:
+      labels:
+        app: apollo-portal
+    spec:
+      containers:
+      - image: 192.168.2.117:5000/center-platform/apollo/portal
+        name: apollo-portal
+        ports:
+        - containerPort: 8080

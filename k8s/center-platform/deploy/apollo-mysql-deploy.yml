@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apollo-mysql
+spec:
+  replicas: 1
+  selector:
+    app: apollo-mysql
+  template:
+    metadata:
+      labels:
+        app: apollo-mysql
+    spec:
+      containers:
+      - image: 10.10.89.23:5000/apollo/mysql
+        name: apollo-mysql
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - name: apollo-mysql-volume
+          mountPath: /var/lib/mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: 'zhongtai123'
+      volumes: 
+      - name: apollo-mysql-volume
+        hostPath:
+          path: /data/mysql
+      nodeSelector:
+        mysql: apollo
