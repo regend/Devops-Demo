@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apollo-config-svc
+spec:
+  ports:
+  - name: apollo-config-svc
+    nodePort: 30101
+    port: 8090
+    targetPort: 8090
+    protocol: TCP
+  selector:
+    app: apollo-config
+  type: NodePort
