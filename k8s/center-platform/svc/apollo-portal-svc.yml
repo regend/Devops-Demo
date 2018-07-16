@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apollo-portal-svc
+spec:
+  ports:
+  - name: apollo-portal-svc
+    nodePort: 30102
+    port: 8090
+    targetPort: 8090
+    protocol: TCP
+  selector:
+    app: apollo-portal
+  type: NodePort
