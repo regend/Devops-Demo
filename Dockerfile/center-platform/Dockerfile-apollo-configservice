@@ -8,4 +8,4 @@ ENV TZ=Asia/Shanghai
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-ENTRYPOINT ./home/apollo-configservice/scripts/startup.sh && tail -200f /home/apollo-configservice/scripts/startup.sh
+ENTRYPOINT ./home/apollo-configservice/scripts/startup.sh && tail -200f /opt/logs/*/*.log
