@@ -13,6 +13,7 @@ cache:
 更新:
  stage: 更新
  script:
-  - echo $CI_PIPELINE_ID>CI_COMMIT_REF_NAME>CI_COMMIT_TAG
+  - echo $CI_COMMIT_REF_NAME
+  - echo $CI_COMMIT_TAG
  tags:
   - dev
