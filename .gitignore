@@ -1,0 +1,12 @@
+# Eclipse
+.classpath
+.project
+target
+.settings
+
+# Idea
+.idea
+*.iml
+
+# git
+*.orig
