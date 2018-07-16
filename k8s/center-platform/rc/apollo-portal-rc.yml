@@ -15,4 +15,4 @@ spec:
       - image: 192.168.2.117:5000/center-platform/apollo/portal
         name: apollo-portal
         ports:
-        - containerPort: 8090
+        - containerPort: 8080

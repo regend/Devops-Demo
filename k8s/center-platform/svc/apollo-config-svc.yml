@@ -6,8 +6,8 @@ spec:
   ports:
   - name: apollo-config-svc
     nodePort: 30101
-    port: 8090
-    targetPort: 8090
+    port: 8080
+    targetPort: 8080
     protocol: TCP
   selector:
     app: apollo-config
