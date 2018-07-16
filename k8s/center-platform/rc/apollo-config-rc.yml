@@ -12,7 +12,7 @@ spec:
         app: apollo-config
     spec:
       containers:
-      - image: 192.168.2.117:5000/center-platform/apollo/configserver
+      - image: 192.168.2.117:5000/center-platform/apollo/configservice
         name: apollo-config
         ports:
         - containerPort: 8090
