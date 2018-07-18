@@ -4,8 +4,6 @@ metadata:
   name: apollo-mysql
 spec:
   replicas: 1
-  selector:
-    app: apollo-mysql
   template:
     metadata:
       labels:
