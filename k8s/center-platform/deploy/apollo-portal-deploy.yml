@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
       - image: 192.168.2.117:5000/center-platform/apollo/portal:dev
+        imagePullPolicy: Always
         name: apollo-portal
         ports:
         - containerPort: 8080
