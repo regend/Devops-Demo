@@ -6,7 +6,8 @@ spec:
   revisionHistoryLimit: 3
   replicas: 1
   selector:
-    app: apollo-portal
+    matchLabels:
+      app: apollo-portal
   template:
     metadata:
       labels:

@@ -5,6 +5,9 @@ metadata:
 spec:
   revisionHistoryLimit: 3
   replicas: 1
+  selector:
+    matchLabels:
+      app: apollo-config
   template:
     metadata:
       labels:
