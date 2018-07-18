@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: apollo-admin
 spec:
+  strategy:
+    type: Recreate
   revisionHistoryLimit: 3
   replicas: 1
   selector:
