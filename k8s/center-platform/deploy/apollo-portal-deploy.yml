@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: apollo-portal
 spec:
+  strategy:
+    type: Recreate
   revisionHistoryLimit: 3
   replicas: 1
   selector:
