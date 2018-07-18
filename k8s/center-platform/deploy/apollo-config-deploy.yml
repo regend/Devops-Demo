@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   name: apollo-config
 spec:
-  strategy:
-    type: Recreate
   revisionHistoryLimit: 3
   replicas: 1
   selector:
@@ -16,7 +14,7 @@ spec:
         app: apollo-config
     spec:
       containers:
-      - image: 192.168.2.117:5000/center-platform/apollo/configservice
+      - image: 192.168.2.117:5000/center-platform/apollo/configservice:dev
         name: apollo-config
         ports:
         - containerPort: 8080

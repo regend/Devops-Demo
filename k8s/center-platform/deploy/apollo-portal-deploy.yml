@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   name: apollo-portal
 spec:
-  strategy:
-    type: Recreate
   revisionHistoryLimit: 3
   replicas: 1
   selector:
@@ -16,7 +14,7 @@ spec:
         app: apollo-portal
     spec:
       containers:
-      - image: 192.168.2.117:5000/center-platform/apollo/portal
+      - image: 192.168.2.117:5000/center-platform/apollo/portal:dev
         name: apollo-portal
         ports:
         - containerPort: 8080
