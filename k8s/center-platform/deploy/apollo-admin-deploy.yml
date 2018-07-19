@@ -14,8 +14,8 @@ spec:
         app: apollo-admin
     spec:
       containers:
-      - image: 192.168.2.117:5000/center-platform/apollo/adminservice:latest
-        imagePullPolicy: Always
+      - image: 192.168.2.117:5000/center-platform/apollo/adminservice:dev
+        ImagePullPolicy: Always
         name: apollo-admin
         ports:
         - containerPort: 8090
