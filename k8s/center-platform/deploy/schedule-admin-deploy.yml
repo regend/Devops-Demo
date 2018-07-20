@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: schedule-admin
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: schedule-admin
+  template:
+    metadata:
+      labels:
+        app: schedule-admin
+    spec:
+      containers:
+      - image: 192.168.2.117:5000/center-platform/schedule/adminservice:dev
+        imagePullPolicy: Always
+        name: schedule-admin
+        ports:
+        - containerPort: 8090
+        resources:
+          limits:
+            memory: "2048Mi"
+            cpu: "2000m"
