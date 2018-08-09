@@ -19,3 +19,10 @@ spec:
         name: apollo-admin
         ports:
         - containerPort: 8090
+        resources:
+          limits:
+            cpu: 2
+            memory: 2048Mi
+          requests:
+            cpu: 1
+            memory: 1024Mi
