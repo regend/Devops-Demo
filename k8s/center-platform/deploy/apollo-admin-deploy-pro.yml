@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apollo-admin
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apollo-admin
+  template:
+    metadata:
+      labels:
+        app: apollo-admin
+    spec:
+      containers:
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/center-platform/apollo-adminservice:1.0.0
+        imagePullPolicy: Always
+        name: apollo-admin
+        ports:
+        - containerPort: 8090
+        resources:
+          limits:
+            cpu: 2
+            memory: 2048Mi
+          requests:
+            cpu: 1
+            memory: 1024Mi
+      imagePullSecrets:
+      - name: ali-docker-registry
