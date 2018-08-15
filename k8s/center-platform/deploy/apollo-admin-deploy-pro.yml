@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: apollo-admin
+  namespace: base-app
 spec:
   revisionHistoryLimit: 3
   replicas: 1
