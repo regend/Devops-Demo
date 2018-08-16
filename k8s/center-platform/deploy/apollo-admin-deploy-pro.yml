@@ -29,7 +29,7 @@ spec:
             memory: 1024Mi
         volumeMounts:
         - name: apollo-admin-volume
-          mountPath: /var/lib/mysql
+          mountPath: /opt/logs
       imagePullSecrets:
       - name: ali-docker-registry
       volumes:
