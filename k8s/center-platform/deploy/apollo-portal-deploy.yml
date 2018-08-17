@@ -18,7 +18,7 @@ spec:
         imagePullPolicy: Always
         name: apollo-portal
         ports:
-        - containerPort: 8080
+        - containerPort: 8070
         resources:
           limits:
             cpu: 2
