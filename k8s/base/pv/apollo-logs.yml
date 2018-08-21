@@ -2,9 +2,11 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: apollo-logs-pv
+  labels:
+    app: apollo
 spec:
   capacity:
-    storage: 50Gi
+    storage: 10Gi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
