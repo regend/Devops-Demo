@@ -33,7 +33,7 @@ spec:
       imagePullSecrets:
       - name: ali-docker-registry
       volumes:
-      - name: apollo-admin-volume
+      - name: apollo-config-volume
         persistentVolumeClaim:
           claimName: center-platform-qa-base
       nodeSelector:
