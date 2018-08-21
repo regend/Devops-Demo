@@ -36,3 +36,5 @@ spec:
       - name: apollo-admin-volume
         persistentVolumeClaim:
           claimName: center-platform-qa-base
+      nodeSelector:
+        app: apollo
