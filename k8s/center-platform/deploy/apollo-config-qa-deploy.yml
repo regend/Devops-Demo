@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apollo-config
+  namespace: base-app
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apollo-config
+  template:
+    metadata:
+      labels:
+        app: apollo-config
+    spec:
+      containers:
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/center-platform/apollo/configservice:release
+        imagePullPolicy: Always
+        name: apollo-config
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 2
+            memory: 2048Mi
+          requests:
+            cpu: 1
+            memory: 1024Mi
+        volumeMounts:
+        - name: apollo-config-volume
+          mountPath: /opt/logs
+      imagePullSecrets:
+      - name: ali-docker-registry
+      volumes:
+      - name: apollo-admin-volume
+        persistentVolumeClaim:
+          claimName: center-platform-qa-base
