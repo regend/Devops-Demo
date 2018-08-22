@@ -15,7 +15,7 @@ spec:
         app: apollo-config
     spec:
       containers:
-      - image: registry-vpc.cn-hongkong.aliyuncs.com/center-platform/apollo/configservice:release
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/center-platform/apollo-configservice:release
         imagePullPolicy: Always
         name: apollo-config
         ports:
