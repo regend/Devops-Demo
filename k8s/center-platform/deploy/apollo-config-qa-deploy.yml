@@ -27,14 +27,7 @@ spec:
           requests:
             cpu: 1
             memory: 1024Mi
-        volumeMounts:
-        - name: apollo-config-volume
-          mountPath: /opt/logs
       imagePullSecrets:
       - name: ali-docker-registry
-      volumes:
-      - name: apollo-config-volume
-        persistentVolumeClaim:
-          claimName: center-platform-qa-base
       nodeSelector:
         app: apollo
