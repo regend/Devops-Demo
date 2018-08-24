@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: apollo-admin-ingress
+  namespace: default
+spec:
+  rules:
+  - host: apoadmin-dev.jmtop.com
+    http:
+      paths:
+      - backend:
+          serviceName: apollo-admin-svc
+          servicePort: 8090
+        path: /

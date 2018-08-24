@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: apollo-portal-ingress
+  namespace: default
+spec:
+  rules:
+  - host: apoportal-dev.jmtop.com
+    http:
+      paths:
+      - backend:
+          serviceName: apollo-portal-svc
+          servicePort: 8070
+        path: /
