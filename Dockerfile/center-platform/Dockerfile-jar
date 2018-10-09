@@ -2,7 +2,7 @@ FROM java:8
 
 MAINTAINER Regend
 
-COPY *facade/*provider/ /usr/local/lib/
+COPY *facade/*provider/build/libs/*.jar /usr/local/lib/
 
 ENV TZ=Asia/Shanghai
 
