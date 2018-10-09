@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: market-center-svc
+spec:
+  ports:
+  - name: market-center-svc
+    nodePort: 30201
+    port: 8080
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: market-center
+  type: NodePort

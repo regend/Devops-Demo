@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: market-center
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: market-center
+  template:
+    metadata:
+      labels:
+        app: market-center
+    spec:
+      containers:
+      - image: 192.168.2.117:5000/center-platform/market-center:dev
+        imagePullPolicy: Always
+        name: market-center
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 2
+            memory: 2048Mi
+          requests:
+            cpu: 1
+            memory: 1024Mi
