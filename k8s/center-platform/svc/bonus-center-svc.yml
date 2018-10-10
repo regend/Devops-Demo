@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: bonus-bonus-svc
-  namespace: bonus-platform
+  namespace: center-platform
 spec:
   ports:
   - name: bonus-bonus-svc
