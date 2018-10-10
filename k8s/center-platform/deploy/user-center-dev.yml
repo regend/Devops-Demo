@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-center
+  namespace: center-platform
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-center
+  template:
+    metadata:
+      labels:
+        app: user-center
+    spec:
+      containers:
+      - image: 192.168.2.117:5000/center-platform/user-center:dev
+        imagePullPolicy: Always
+        name: user-center
+        ports:
+        - containerPort: 8080
