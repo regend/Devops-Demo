@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bonus-center
+  namespace: center-platform
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bonus-center
+  template:
+    metadata:
+      labels:
+        app: bonus-center
+    spec:
+      containers:
+      - image: 192.168.2.117:5000/center-platform/bonus-center:dev
+        imagePullPolicy: Always
+        name: bonus-center
+        ports:
+        - containerPort: 8080

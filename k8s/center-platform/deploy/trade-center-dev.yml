@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trade-center
+  namespace: center-platform
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trade-center
+  template:
+    metadata:
+      labels:
+        app: trade-center
+    spec:
+      containers:
+      - image: 192.168.2.117:5000/center-platform/trade-center:dev
+        imagePullPolicy: Always
+        name: trade-center
+        ports:
+        - containerPort: 8080

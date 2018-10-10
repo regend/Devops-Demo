@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: content-center-svc
+  namespace: center-platform
+spec:
+  ports:
+  - name: content-center-svc
+    nodePort: 30204
+    port: 8080
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: content-center
+  type: NodePort
