@@ -10,7 +10,8 @@ mkdir /etc/docker
 cat <<EOF > /etc/docker/daemon.json
 {
     "insecure-registries": [
-        "10.10.89.23:5000"
+        "10.10.89.23:5000",
+        "192.168.2.117:5000"
     ],
     "graph": "/data/docker",
     "storage-driver": "devicemapper"
