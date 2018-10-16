@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eureka-server
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eureka-server
+  template:
+    metadata:
+      labels:
+        app: eureka-server
+    spec:
+      containers:
+      - image: 192.168.2.117:5000/center-platform/eureka-server:dev
+        imagePullPolicy: Always
+        name: eureka-server
+        ports:
+        - containerPort: 8080
+        env:
+          - name: "ENV"
+            value: "dev"
+          - name: "APOLLO_META_URL"
+            value: "http://apoconf-dev.jmtop.com"
