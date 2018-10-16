@@ -10,7 +10,8 @@ mkdir /etc/docker
 cat <<EOF > /etc/docker/daemon.json
 {
     "insecure-registries": [
-        "10.10.89.23:5000"
+        "10.10.89.23:5000",
+        "192.168.2.117:5000"
     ],
     "graph": "/data/docker",
     "storage-driver": "devicemapper"
@@ -38,7 +39,7 @@ repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 setenforce 0
-yum install -y kubelet kubeadm kubectl
+yum install -y kubelet-1.11.0 kubeadm-1.11.0 kubectl-1.11.0
 systemctl enable kubelet && systemctl start kubelet
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 swapoff -a
