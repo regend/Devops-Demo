@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zipkin-server
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zipkin-server
+  template:
+    metadata:
+      labels:
+        app: zipkin-server
+    spec:
+      containers:
+      - image: 192.168.2.117:5000/center-platform/zipkin-server:dev
+        imagePullPolicy: Always
+        name: zipkin-server
+        ports:
+        - containerPort: 8080
+        env:
+          - name: "ENV"
+            value: "dev"
+          - name: "APOLLO_META_URL"
+            value: "http://apoconf-dev.jmtop.com"
