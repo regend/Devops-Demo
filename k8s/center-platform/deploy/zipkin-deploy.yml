@@ -19,3 +19,16 @@ spec:
         name: zipkin
         ports:
         - containerPort: 9411
+        env:
+          - name: "STORAGE_TYPE"
+            value: "mysql"
+          - name: "MYSQL_HOST"
+            value: "192.168.2.114"
+          - name: "MYSQL_TCP_PORT"
+            value: "30006"
+          - name: "MYSQL_DB"
+            value: "zipkin"
+          - name: "MYSQL_USER"
+            value: "root"
+          - name: "MYSQL_PASS"
+            value: "zhongtai123"
