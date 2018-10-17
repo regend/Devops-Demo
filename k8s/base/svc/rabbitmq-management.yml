@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: rabbitmq-svc
+  name: rabbitmq-management-svc
 spec:
   ports:
-  - name: rabbitmq-svc
+  - name: rabbitmq-management-svc
     nodePort: 31672
     port: 15672
     targetPort: 15672
