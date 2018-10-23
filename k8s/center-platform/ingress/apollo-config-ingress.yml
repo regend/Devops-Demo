@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: apollo-config-ingress
+  name: apollo-config-ingress-test
   namespace: default
   annotations:
     nginx.org/proxy-connect-timeout: "8s"
@@ -9,10 +9,10 @@ metadata:
     nginx.org/proxy-read-timeout: "999s"
 spec:
   rules:
-  - host: apoconf-dev.jmtop.com
+  - host: apoconf-dev.jmtoptest.com
     http:
       paths:
       - backend:
           serviceName: apollo-config-svc
-          servicePort: 8081
+          servicePort: 8080
         path: /
