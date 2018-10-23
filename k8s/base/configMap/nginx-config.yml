@@ -4,7 +4,5 @@ metadata:
   name: nginx-configuration
   namespace: ingress-nginx
 data:
-  proxy-connect-timeout: "10s" # default is "60s". Sets the value of proxy_connect_timeout and grpc_connect_timeout directives. See http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_connect_timeout , http://nginx.org/en/docs/http/ngx_http_grpc_module.html#grpc_connect_timeout
-  proxy-read-timeout: "10s" # default is "60s". Sets the value of proxy_read_timeout and grpc_read_timeout directives. See http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_read_timeout , http://nginx.org/en/docs/http/ngx_http_grpc_module.html#grpc_read_timeout
-  proxy-hide-headers: "header-a,header-b" # No default. Sets the value of one or more proxy_hide_header directives. See http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_hide_header
-  proxy-pass-headers: "header-a,header-b" # No default. Sets the value of one or more proxy_pass_header directives. See http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass_header
+  proxy-connect-timeout: "10" # default is "60s". Sets the value of proxy_connect_timeout and grpc_connect_timeout directives. See http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_connect_timeout , http://nginx.org/en/docs/http/ngx_http_grpc_module.html#grpc_connect_timeout
+  proxy-read-timeout: "60" # default is "60s". Sets the value of proxy_read_timeout and grpc_read_timeout directives. See http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_read_timeout , http://nginx.org/en/docs/http/ngx_http_grpc_module.html#grpc_read_timeout
