@@ -1,14 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: apollo-config-ingress-test
+  name: apollo-config-ingress
   namespace: default
   annotations:
     nginx.ingress.kubernetes.io/proxy-connect-timeout: "12"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "999"
 spec:
   rules:
-  - host: apoconf-dev.jmtoptest.com
+  - host: apoconf-dev.jmtop.com
     http:
       paths:
       - backend:
