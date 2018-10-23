@@ -20,3 +20,8 @@ spec:
         name: content-center
         ports:
         - containerPort: 8080
+        env:
+          - name: "ENV"
+            value: "dev"
+          - name: "APOLLO_META_URL"
+            value: "http://apoconf-dev.jmtop.com"
