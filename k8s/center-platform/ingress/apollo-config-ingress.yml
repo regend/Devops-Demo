@@ -7,6 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-connect-timeout: "12"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "999"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "999"
+    nginx.ingress.kubernetes.io/proxy_buffering: "on"
 spec:
   rules:
   - host: apoconf-dev.jmtop.com
