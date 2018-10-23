@@ -6,3 +6,4 @@ metadata:
 data:
   proxy-connect-timeout: "10" # default is "60s". Sets the value of proxy_connect_timeout and grpc_connect_timeout directives. See http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_connect_timeout , http://nginx.org/en/docs/http/ngx_http_grpc_module.html#grpc_connect_timeout
   proxy-read-timeout: "60" # default is "60s". Sets the value of proxy_read_timeout and grpc_read_timeout directives. See http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_read_timeout , http://nginx.org/en/docs/http/ngx_http_grpc_module.html#grpc_read_timeout
+  proxy-send-timeout: "60" # default is "60s". Sets the value of proxy_read_timeout and grpc_read_timeout directives. See http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_read_timeout , http://nginx.org/en/docs/http/ngx_http_grpc_module.html#grpc_read_timeout
