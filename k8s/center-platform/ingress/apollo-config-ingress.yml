@@ -4,9 +4,9 @@ metadata:
   name: apollo-config-ingress
   namespace: default
   annotations:
-    proxy_connect_timeout: "10s"
-    proxy_send_timeout: "999s"
-    proxy_read_timeout: "999s"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "10s"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "999s"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "999s"
 spec:
   rules:
   - host: apoconf-dev.jmtop.com
