@@ -25,3 +25,5 @@ spec:
             value: "qa"
           - name: "APOLLO_META_URL"
             value: "http://apoconf-qa.jmtop.com"
+      imagePullSecrets:
+      - name: ali-docker-registry
