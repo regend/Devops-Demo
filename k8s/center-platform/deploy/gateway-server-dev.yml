@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-server
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gateway-server
+  template:
+    metadata:
+      labels:
+        app: gateway-server
+    spec:
+      containers:
+      - image: 192.168.2.117:5000/center-platform/gateway-server:dev
+        imagePullPolicy: Always
+        name: gateway-server
+        ports:
+        - containerPort: 8080
+        env:
+          - name: "ENV"
+            value: "dev"
+          - name: "APOLLO_META_URL"
+            value: "http://apoconf-dev.jmtop.com"
