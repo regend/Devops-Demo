@@ -13,5 +13,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs
   nfs:
-    path: /home/k8s/conf/redis-6379.conf
+    path: /home/k8s/conf
     server: 192.168.2.118

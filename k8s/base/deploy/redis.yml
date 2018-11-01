@@ -18,5 +18,13 @@ spec:
       - image: redis
         imagePullPolicy: Always
         name: redis
+        command: ["redis-server", "/usr/local/etc/redis/redis-6379.conf"]
         ports:
         - containerPort: 6379
+        volumeMounts:
+        - name: redis-conf
+          mountPath: /usr/local/etc/redis
+      volumes:
+      - name: redis-conf
+        persistentVolumeClaim:
+          claimName: redis-conf-pvc
