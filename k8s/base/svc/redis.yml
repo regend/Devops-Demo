@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-svc
+  namespace: base
+spec:
+  ports:
+  - name: redis-svc
+    nodePort: 30379
+    port: 6379
+    targetPort: 6379
+    protocol: TCP
+  selector:
+    app: redis
+  type: NodePort
