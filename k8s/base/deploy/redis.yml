@@ -20,10 +20,3 @@ spec:
         name: redis
         ports:
         - containerPort: 6379
-        volumeMounts:
-        - name: redis-conf
-          mountPath: /usr/local/etc/redis/redis.conf
-      volumes:
-      - name: redis-conf
-        persistentVolumeClaim:
-          claimName: redis-conf-pvc
