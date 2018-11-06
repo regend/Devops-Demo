@@ -28,4 +28,4 @@ spec:
         hostPath:
           path: /data/pg
       nodeSelector:
-        mysql: mysql-apollo
+        app: apollo
