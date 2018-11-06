@@ -4,6 +4,9 @@ metadata:
   name: pg
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: pg
   template:
     metadata:
       labels:
