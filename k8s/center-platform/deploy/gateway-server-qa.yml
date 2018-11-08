@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-server
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gateway-server
+  template:
+    metadata:
+      labels:
+        app: gateway-server
+    spec:
+      containers:
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/center-platform/gateway-server:qa
+        imagePullPolicy: Always
+        name: gateway-server
+        ports:
+        - containerPort: 8080
+        env:
+          - name: "ENV"
+            value: "FAT"
+          - name: "APOLLO_META_URL"
+            value: "http://apoconf-qa.jmtop.com"
+      imagePullSecrets:
+        - name: ali-docker-registry
