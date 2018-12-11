@@ -29,5 +29,3 @@ spec:
             memory: 1024Mi
       imagePullSecrets:
       - name: ali-docker-registry
-      nodeSelector:
-        app: apollo
