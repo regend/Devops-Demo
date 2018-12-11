@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: eureka-server
-  namespace: base-app
+  namespace: center-platform
 spec:
   revisionHistoryLimit: 3
   replicas: 1
