@@ -15,7 +15,7 @@ spec:
         app: eureka-server
     spec:
       containers:
-      - image: registry-vpc.cn-hongkong.aliyuncs.com/center-platform/eureka-server:qa
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/jmtop/eureka-server:qa
         imagePullPolicy: Always
         name: eureka-server
         ports:
