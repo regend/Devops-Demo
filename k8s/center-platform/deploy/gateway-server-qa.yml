@@ -15,7 +15,7 @@ spec:
         app: gateway-server
     spec:
       containers:
-      - image: registry-vpc.cn-hongkong.aliyuncs.com/center-platform/gateway-server:qa
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/jmtop/gateway-server:qa
         imagePullPolicy: Always
         name: gateway-server
         ports:
