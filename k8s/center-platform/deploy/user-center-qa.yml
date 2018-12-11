@@ -15,7 +15,7 @@ spec:
         app: user-center
     spec:
       containers:
-      - image: registry-vpc.cn-hongkong.aliyuncs.com/center-platform/user-center:qa
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/top/user-center:qa
         imagePullPolicy: Always
         name: user-center
         ports:
