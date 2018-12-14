@@ -39,3 +39,5 @@ spec:
             value: "Zhongtai123"
           - name: "RABBIT_ADDRESSES"
             value: "rabbitmq:5672"
+      imagePullSecrets:
+      - name: ali-docker-registry
