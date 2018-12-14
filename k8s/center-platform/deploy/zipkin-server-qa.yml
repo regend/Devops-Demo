@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: zipkin-server
   namespace: center-platform
+
 spec:
   revisionHistoryLimit: 3
   replicas: 1
