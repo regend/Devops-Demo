@@ -14,7 +14,7 @@ spec:
         app: zipkin-server
     spec:
       containers:
-      - image: registry-vpc.cn-hongkong.aliyuncs.com/jmtop/zipkin-server:dev
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/jmtop/zipkin-server:qa
         imagePullPolicy: Always
         name: zipkin-server
         ports:
