@@ -38,6 +38,6 @@ spec:
           - name: "MYSQL_PASS"
             value: "Zhongtai123"
           - name: "RABBIT_ADDRESSES"
-            value: "rabbitmq:5672"
+            value: "rabbitmq.base.svc.cluster.local:5672"
       imagePullSecrets:
       - name: ali-docker-registry
