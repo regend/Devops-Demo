@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zipkin-server
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zipkin-server
+  template:
+    metadata:
+      labels:
+        app: zipkin-server
+    spec:
+      containers:
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/jmtop/zipkin-server:dev
+        imagePullPolicy: Always
+        name: zipkin-server
+        ports:
+        - containerPort: 8080
+        env:
+          - name: "ENV"
+            value: "fat"
+          - name: "APOLLO_META_URL"
+            value: "http://apoconf-qa.jmtop.com"
+          - name: "STORAGE_TYPE"
+            value: "mysql"
+          - name: "MYSQL_HOST"
+            value: "public-qa.mysql.rds.aliyuncs.com"
+          - name: "MYSQL_TCP_PORT"
+            value: "3306"
+          - name: "MYSQL_DB"
+            value: "zipkin"
+          - name: "MYSQL_USER"
+            value: "zhongtai"
+          - name: "MYSQL_PASS"
+            value: "Zhongtai123"
+          - name: "RABBIT_ADDRESSES"
+            value: "rabbitmq:5672"
