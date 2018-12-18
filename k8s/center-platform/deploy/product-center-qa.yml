@@ -24,6 +24,6 @@ spec:
           - name: "ENV"
             value: "FAT"
           - name: "APOLLO_META_URL"
-            value: "http://apollo-config"
+            value: "http://apoconf-dev.jmtop.com"
       imagePullSecrets:
       - name: ali-docker-registry
