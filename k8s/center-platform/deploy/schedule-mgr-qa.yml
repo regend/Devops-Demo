@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: schedule-mgr
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: schedule-mgr
+  template:
+    metadata:
+      labels:
+        app: schedule-mgr
+    spec:
+      containers:
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/jmtop/schedule-mgr:qa
+        imagePullPolicy: Always
+        name: schedule-mgr
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: ali-docker-registry
