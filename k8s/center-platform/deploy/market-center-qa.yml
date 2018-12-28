@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: market-center
+  namespace: center-platform
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  selector:
+    matchLabels:
+      app: market-center
+  template:
+    metadata:
+      labels:
+        app: market-center
+    spec:
+      containers:
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/jmtop/market-center:qa
+        imagePullPolicy: Always
+        name: market-center
+        ports:
+        - containerPort: 8080
+        env:
+          - name: "ENV"
+            value: "FAT"
+          - name: "APOLLO_META_URL"
+            value: "http://apoconf-qa.jmtop.com"
+      imagePullSecrets:
+      - name: ali-docker-registry
