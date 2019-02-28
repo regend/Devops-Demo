@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: micro-shop-web
+  namespace: micro-shop
+spec:
+  revisionHistoryLimit: 3
+  replicas: 1
+  serviceName: micro-shop-web
+  selector:
+    matchLabels:
+      app: micro-shop-web
+  template:
+    metadata:
+      labels:
+        app: micro-shop-web
+    spec:
+      containers:
+      - image: registry-vpc.cn-hongkong.aliyuncs.com/jmtop/micro-shop-web
+        imagePullPolicy: Always
+        name: micro-shop-web
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: ali-docker-registry
