@@ -1,0 +1,38 @@
+FROM jenkins/jnlp-slave:latest
+
+LABEL Description="maven:3.3.9;gradle:3.0;git;docker-ce"
+
+MAINTAINER Regend
+
+USER root
+
+# 安装 maven-3.3.9
+RUN wget http://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz && \
+    tar -zxf apache-maven-3.3.9-bin.tar.gz && \
+    mv apache-maven-3.3.9 /usr/local && \
+    rm -f apache-maven-3.3.9-bin.tar.gz && \
+    ln -s /usr/local/apache-maven-3.3.9/bin/mvn /usr/bin/mvn && \
+    ln -s /usr/local/apache-maven-3.3.9 /usr/local/apache-maven
+
+# 安装 gradle-3.0
+ADD https://downloads.gradle.org/distributions/gradle-3.0-bin.zip /opt/gradle/
+
+RUN unzip -o /opt/gradle/gradle-3.0-bin.zip -d /opt/gradle/
+
+# 安装 git&docker-ce
+RUN apt-get update
+
+RUN apt-get install -y git apt-transport-https ca-certificates curl gnupg2 software-properties-common
+
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
+    apt-key fingerprint 0EBFCD88 && \
+	add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" && \
+	apt-get update && \
+    apt-get install -y docker-ce docker-ce-cli containerd.io
+
+# 配置编码解决中文乱码问题	
+ENV LANG=C.UTF-8
+
+ENV GRADLE_HOME=/opt/gradle/gradle-3.0
+
+ENV PATH=$GRADLE_HOME/bin:$PATH
